@@ -38,16 +38,16 @@ src
 
 ## План разработки (Вариант A)
 
-| Шаг | Этап | Статус |
-|-----|------|--------|
+| Шаг | Этап                                       | Статус |
+|-----|--------------------------------------------|--------|
 | 1 | BaseApiSpec – общие настройки Rest-Assured | ✅ |
-| 2 | Config через Owner (baseUrl, timeout) | ✅ |
-| 3 | Модели данных (Booking, BookingDates) | ✅ |
-| 4 | API-клиент (get/create/delete booking) | ✅ |
-| 5 | CRUD-тест CreateBooking | ✅ |
-| 6 | Allure – отчёты и аннотации | ☐ |
-| 7 | UI-слой на Selenide (smoke) | ☐ |
-| 8 | Рефакторинг, README-финализация | ☐ |
+| 2 | Config через Owner (baseUrl, timeout)      | ✅ |
+| 3 | Модели данных (Booking, BookingDates)      | ✅ |
+| 4 | API-клиент (get/create/delete booking)     | ✅ |
+| 5 | CRUD-тест CreateBooking                    | ✅ |
+| 6 | Allure, негативные и контрактные тесты (403, JSON Schema)                                   | ✅ |
+| 7 | UI-слой на Selenide (smoke)                | ☐ |
+| 8 | Рефакторинг, README-финализация            | ☐ |
 * вынести логин и пароль из BookingClient в test.properties и читать через Owner
 
 ---
