@@ -1,6 +1,7 @@
 package api;
 
 import common.config.ConfigLoader;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
@@ -24,6 +25,7 @@ public class BaseApiSpec {
         spec = new RequestSpecBuilder()
                 .setBaseUri(cfg.baseUrl())
                 .setContentType(ContentType.JSON)
+                .addFilter(new io.qameta.allure.restassured.AllureRestAssured())
                 .log(LogDetail.URI)
                 .build();
 
