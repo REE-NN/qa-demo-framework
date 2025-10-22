@@ -41,8 +41,8 @@ src
 | Шаг | Этап | Статус |
 |-----|------|--------|
 | 1 | BaseApiSpec – общие настройки Rest-Assured | ✅ |
-| 2 | Config через Owner (baseUrl, timeout) | ☐ |
-| 3 | API-клиент (get/create/delete booking) | ☐ |
+| 2 | Config через Owner (baseUrl, timeout) | ✅ |
+| 3 | API-клиент (get/create/delete booking) | ✅ |
 | 4 | Модели данных (Booking, BookingDates) | ☐ |
 | 5 | CRUD-тест CreateBooking | ☐ |
 | 6 | Allure – отчёты и аннотации | ☐ |
