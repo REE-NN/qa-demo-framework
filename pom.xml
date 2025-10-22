@@ -110,19 +110,19 @@
         </dependency>
     </dependencies>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>qameta-plugins</id>
-            <url>https://repo.qameta.io/maven</url>
-        </pluginRepository>
-    </pluginRepositories>
+<!--    <pluginRepositories>-->
+<!--        <pluginRepository>-->
+<!--            <id>qameta-plugins</id>-->
+<!--            <url>https://repo.qameta.io/maven</url>-->
+<!--        </pluginRepository>-->
+<!--    </pluginRepositories>-->
 
-    <repositories>
-        <repository>
-            <id>qameta-repo</id>
-            <url>https://repo.qameta.io/maven</url>
-        </repository>
-    </repositories>
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>qameta-repo</id>-->
+<!--            <url>https://repo.qameta.io/maven</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
 
     <build>
         <plugins>

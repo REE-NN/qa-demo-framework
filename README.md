@@ -46,7 +46,7 @@ src
 | 4 | API-клиент (get/create/delete booking)     | ✅ |
 | 5 | CRUD-тест CreateBooking                    | ✅ |
 | 6 | Allure, негативные и контрактные тесты (403, JSON Schema)                                   | ✅ |
-| 7 | UI-слой на Selenide (smoke)                | ☐ |
+| 7 | UI-слой на Selenide (smoke)                | ✅ |
 | 8 | Рефакторинг, README-финализация            | ☐ |
 * вынести логин и пароль из BookingClient в test.properties и читать через Owner
 
