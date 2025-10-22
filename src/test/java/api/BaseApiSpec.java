@@ -1,10 +1,14 @@
 package api;
 
+import common.config.ConfigLoader;
 import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
+import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 import org.junit.jupiter.api.BeforeAll;
+
+import static io.restassured.config.HttpClientConfig.httpClientConfig;
 
 public class BaseApiSpec {
 
@@ -12,23 +16,26 @@ public class BaseApiSpec {
 
     @BeforeAll
     static void setUpApi() {
-        // Временный способ задавать baseUrl (пока без Owner):
-        // можно переопределить через -DbaseUrl=... при запуске.
-        String baseUrl = System.getProperty(
-                "baseUrl",
-                "https://restful-booker.herokuapp.com"
-        );
+        var cfg = ConfigLoader.cfg();
 
         // Глобальные настройки Rest-Assured
         RestAssured.enableLoggingOfRequestAndResponseIfValidationFails();
 
         spec = new RequestSpecBuilder()
-                .setBaseUri(baseUrl)
+                .setBaseUri(cfg.baseUrl())
                 .setContentType(ContentType.JSON)
+                .log(LogDetail.URI)
                 .build();
+
+        // Таймауты HTTP-клиента (важно для нестабильных демо-API)
+        RestAssured.config = RestAssured.config()
+                                        .httpClient(httpClientConfig()
+                                                .setParam("http.socket.timeout", cfg.httpTimeoutMs())
+                                                .setParam("http.connection.timeout", cfg.httpTimeoutMs())
+                                                .setParam("http.connection-manager.timeout",
+                                                        (long) cfg.httpTimeoutMs()));
 
         // Сделаем spec дефолтным для given()
         RestAssured.requestSpecification = spec;
-
     }
 }
