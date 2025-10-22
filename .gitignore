@@ -1,12 +1,8 @@
 target/
 !.mvn/wrapper/maven-wrapper.jar
-!**/src/test/**/target/
 
 ### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
+.idea/
 *.iws
 *.iml
 *.ipr
@@ -14,3 +10,7 @@ target/
 ### Allure ###
 allure-results/
 allure-report/
+
+# OS junk
+.DS_Store
+Thumbs.db
